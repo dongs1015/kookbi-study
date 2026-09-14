@@ -21,7 +21,24 @@ public class day09_08 {
 		}
 		
 		System.out.println("\n----------------------");
-		
+
+		for (int i = 0; i < score.length - 1; i++) {
+            int maxIdx = i; 
+        
+            for (int j = i + 1; j < score.length; j++) {
+                if (score[j] > score[maxIdx]) {
+                    maxIdx = j;
+                }
+            }
+            
+            int temp = score[i];
+            score[i] = score[maxIdx];
+            score[maxIdx] = temp;
+        }
+
+        for (int i = 0; i < score.length; i++) {
+            System.out.print(score[i] + " ");
+        }
 		
 	}
 }
