@@ -23,7 +23,9 @@ class Healer extends Skil {
 
 public class SkilTest {
 	public static void main(String[] args) throws IOException {
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+		
 		Skil arr[] = new Skil[3];
 		arr[0] = new Warrior();
 		arr[1] = new Mage();
@@ -39,44 +41,35 @@ public class SkilTest {
 		System.out.println("4.스페셜 모든 캐릭터 필살기 쓰기");
 		System.out.println("5.종료");
 		System.out.println("========================");
-		while (user != 4) {
-			
-			System.out.print("메뉴>");
+		while (user != 5) {
+    	System.out.print("메뉴>");
+    	user = Integer.parseInt(br.readLine().trim());
 
-			user = System.in.read() - 49;
-			System.in.read(); // 개행 문자 버퍼 비우기
-
-			switch (user) {
-			case 0:
-				for (int i = 0; i < arr.length; i++) {
-					if (arr[i] instanceof Warrior) {
-						arr[i].Finish();
-					}
-				}
-				break;
-			case 1:
-				for (int i = 0; i < arr.length; i++) {
-					if (arr[i] instanceof Mage) {
-						arr[i].Finish();
-					}
-				}
-				break;
-			case 2:
-				for (int i = 0; i < arr.length; i++) {
-					if (arr[i] instanceof Healer) {
-						arr[i].Finish();
-					}
-				}
-				break;
-			case 3:
-				for (int i = 0; i < arr.length; i++) {
-					arr[i].Finish();
-				}
-				break;
-			case 4:
-				System.out.println("종료합니다.");
-				break;
-			}
+    	switch (user) {
+    	case 1:
+        	for (int i = 0; i < arr.length; i++) {
+            	if (arr[i] instanceof Warrior) arr[i].Finish();
+        	}
+       		 break;
+  		case 2:
+        	for (int i = 0; i < arr.length; i++) {
+            	if (arr[i] instanceof Mage) arr[i].Finish();
+        	}
+        	break;
+    	case 3:
+	        for (int i = 0; i < arr.length; i++) {
+            	if (arr[i] instanceof Healer) arr[i].Finish();
+        	}
+        	break;
+    	case 4:
+        	for (int i = 0; i < arr.length; i++) {
+            	arr[i].Finish();
+        	}
+        	break;
+    	case 5:
+        	System.out.println("종료합니다.");
+        break;
+    		}
 		}
 	}
 }
