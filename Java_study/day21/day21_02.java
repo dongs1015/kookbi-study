@@ -19,6 +19,8 @@ public class day21_02 {
 			System.out.print(str.charAt(i));
 		}
 		
+//		StringBuffer sb=new StringBuffer(str);
+//		System.out.println(sb.reverse());
 	}
 
 }
