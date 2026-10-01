@@ -1,4 +1,4 @@
-package day21;
+package day21; //api test2 교수님버전
 
 import java.util.*;
 
